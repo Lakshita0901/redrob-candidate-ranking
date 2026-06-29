@@ -133,6 +133,12 @@ def is_honeypot_candidate(cand):
     if s_min is not None and s_max is not None and s_min > s_max:
         return True
 
+    # 6. Signup date after last active date
+    signup_date = signals.get("signup_date")
+    last_active_date = signals.get("last_active_date")
+    if signup_date and last_active_date and signup_date > last_active_date:
+        return True
+
     return False
 
 def calculate_score(cand):
