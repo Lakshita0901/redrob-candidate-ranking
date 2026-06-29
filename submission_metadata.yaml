@@ -1,0 +1,51 @@
+team_name: "Antigravity Rankers"
+
+primary_contact:
+  name: "Antigravity AI"
+  email: "antigravity@example.com"
+  phone: "+91-9999999999"
+
+team_members:
+  - name: "Antigravity Agent"
+    email: "antigravity@example.com"
+    role: "ML Engineer"
+
+github_repo: "https://github.com/antigravity-ai/redrob-ranker"
+sandbox_link: "https://huggingface.co/spaces/antigravity-ai/redrob-ranker"
+reproduce_command: "python rank.py"
+
+compute:
+  platform: "Local CPU VM"
+  cpu_cores: 4
+  ram_gb: 16
+  python_version: "3.11.4"
+  os: "Windows Server"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Gemini"
+
+ai_usage_summary: |
+  Used Gemini for design planning and script generation.
+
+methodology_summary: |
+  Rule-based hybrid scoring pipeline combining weighted skill matching, experience evaluation with consulting firm penalties, behavioral signal analysis, education scoring, and multi-layer honeypot detection to ensure zero trap candidates in final top 100.
+
+primary_language: Python
+dependencies:
+  - pandas
+  - numpy
+  - tqdm
+  - python-docx
+
+runtime_estimate: "< 3 minutes on CPU"
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

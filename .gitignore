@@ -1,0 +1,8 @@
+candidates.jsonl
+ranked_candidates.json
+__pycache__/
+*.pyc
+scratch/
+*.log
+*.gz
+.DS_Store

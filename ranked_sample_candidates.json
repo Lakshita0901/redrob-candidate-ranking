@@ -1,0 +1,282 @@
+[
+  {
+    "candidate_id": "CAND_0000031",
+    "current_title": "Recommendation Systems Engineer",
+    "years_of_experience": 6.0,
+    "matched_skills_count": 3,
+    "response_rate": 0.91,
+    "final_score": 0.5285583333333334
+  },
+  {
+    "candidate_id": "CAND_0000001",
+    "current_title": "Backend Engineer",
+    "years_of_experience": 6.9,
+    "matched_skills_count": 2,
+    "response_rate": 0.34,
+    "final_score": 0.5219020833333334
+  },
+  {
+    "candidate_id": "CAND_0000043",
+    "current_title": "Cloud Engineer",
+    "years_of_experience": 8.3,
+    "matched_skills_count": 4,
+    "response_rate": 0.04,
+    "final_score": 0.5006666666666667
+  },
+  {
+    "candidate_id": "CAND_0000021",
+    "current_title": "Project Manager",
+    "years_of_experience": 14.5,
+    "matched_skills_count": 2,
+    "response_rate": 0.49,
+    "final_score": 0.47500000000000003
+  },
+  {
+    "candidate_id": "CAND_0000014",
+    "current_title": "Frontend Engineer",
+    "years_of_experience": 8.4,
+    "matched_skills_count": 0,
+    "response_rate": 0.8,
+    "final_score": 0.47126666666666667
+  },
+  {
+    "candidate_id": "CAND_0000048",
+    "current_title": "Mobile Developer",
+    "years_of_experience": 9.7,
+    "matched_skills_count": 0,
+    "response_rate": 0.65,
+    "final_score": 0.4614666666666667
+  },
+  {
+    "candidate_id": "CAND_0000025",
+    "current_title": "Frontend Engineer",
+    "years_of_experience": 7.3,
+    "matched_skills_count": 1,
+    "response_rate": 0.74,
+    "final_score": 0.4564666666666667
+  },
+  {
+    "candidate_id": "CAND_0000010",
+    "current_title": "Data Engineer",
+    "years_of_experience": 4.6,
+    "matched_skills_count": 2,
+    "response_rate": 0.4,
+    "final_score": 0.4397125
+  },
+  {
+    "candidate_id": "CAND_0000045",
+    "current_title": "Project Manager",
+    "years_of_experience": 12.2,
+    "matched_skills_count": 0,
+    "response_rate": 0.62,
+    "final_score": 0.43493333333333334
+  },
+  {
+    "candidate_id": "CAND_0000046",
+    "current_title": "Mechanical Engineer",
+    "years_of_experience": 7.8,
+    "matched_skills_count": 0,
+    "response_rate": 0.41,
+    "final_score": 0.4338666666666667
+  },
+  {
+    "candidate_id": "CAND_0000050",
+    "current_title": "Business Analyst",
+    "years_of_experience": 13.5,
+    "matched_skills_count": 0,
+    "response_rate": 0.42,
+    "final_score": 0.43300000000000005
+  },
+  {
+    "candidate_id": "CAND_0000037",
+    "current_title": "Business Analyst",
+    "years_of_experience": 14.3,
+    "matched_skills_count": 0,
+    "response_rate": 0.78,
+    "final_score": 0.42573333333333335
+  },
+  {
+    "candidate_id": "CAND_0000020",
+    "current_title": "Mechanical Engineer",
+    "years_of_experience": 6.3,
+    "matched_skills_count": 0,
+    "response_rate": 0.55,
+    "final_score": 0.39840625
+  },
+  {
+    "candidate_id": "CAND_0000038",
+    "current_title": "Java Developer",
+    "years_of_experience": 6.7,
+    "matched_skills_count": 1,
+    "response_rate": 0.2,
+    "final_score": 0.38798125000000006
+  },
+  {
+    "candidate_id": "CAND_0000005",
+    "current_title": "Accountant",
+    "years_of_experience": 11.0,
+    "matched_skills_count": 0,
+    "response_rate": 0.37,
+    "final_score": 0.3877333333333334
+  },
+  {
+    "candidate_id": "CAND_0000007",
+    "current_title": "Civil Engineer",
+    "years_of_experience": 5.5,
+    "matched_skills_count": 0,
+    "response_rate": 0.62,
+    "final_score": 0.3853895833333334
+  },
+  {
+    "candidate_id": "CAND_0000024",
+    "current_title": "HR Manager",
+    "years_of_experience": 7.5,
+    "matched_skills_count": 0,
+    "response_rate": 0.78,
+    "final_score": 0.3817583333333333
+  },
+  {
+    "candidate_id": "CAND_0000033",
+    "current_title": "Graphic Designer",
+    "years_of_experience": 8.6,
+    "matched_skills_count": 0,
+    "response_rate": 0.08,
+    "final_score": 0.3813333333333334
+  },
+  {
+    "candidate_id": "CAND_0000002",
+    "current_title": "Operations Manager",
+    "years_of_experience": 12.5,
+    "matched_skills_count": 0,
+    "response_rate": 0.29,
+    "final_score": 0.37846666666666673
+  },
+  {
+    "candidate_id": "CAND_0000029",
+    "current_title": "Business Analyst",
+    "years_of_experience": 7.2,
+    "matched_skills_count": 0,
+    "response_rate": 0.12,
+    "final_score": 0.3716666666666667
+  },
+  {
+    "candidate_id": "CAND_0000016",
+    "current_title": "Accountant",
+    "years_of_experience": 5.3,
+    "matched_skills_count": 0,
+    "response_rate": 0.64,
+    "final_score": 0.36606875
+  },
+  {
+    "candidate_id": "CAND_0000034",
+    "current_title": "Business Analyst",
+    "years_of_experience": 14.5,
+    "matched_skills_count": 0,
+    "response_rate": 0.15,
+    "final_score": 0.3641333333333334
+  },
+  {
+    "candidate_id": "CAND_0000044",
+    "current_title": "Frontend Engineer",
+    "years_of_experience": 5.7,
+    "matched_skills_count": 1,
+    "response_rate": 0.66,
+    "final_score": 0.35924375
+  },
+  {
+    "candidate_id": "CAND_0000018",
+    "current_title": "Frontend Engineer",
+    "years_of_experience": 6.6,
+    "matched_skills_count": 0,
+    "response_rate": 0.16,
+    "final_score": 0.34772083333333337
+  },
+  {
+    "candidate_id": "CAND_0000042",
+    "current_title": "HR Manager",
+    "years_of_experience": 5.0,
+    "matched_skills_count": 0,
+    "response_rate": 0.58,
+    "final_score": 0.34408750000000005
+  },
+  {
+    "candidate_id": "CAND_0000023",
+    "current_title": "Software Engineer",
+    "years_of_experience": 3.7,
+    "matched_skills_count": 0,
+    "response_rate": 0.57,
+    "final_score": 0.3314354166666667
+  },
+  {
+    "candidate_id": "CAND_0000006",
+    "current_title": "Business Analyst",
+    "years_of_experience": 6.0,
+    "matched_skills_count": 0,
+    "response_rate": 0.12,
+    "final_score": 0.32009166666666666
+  },
+  {
+    "candidate_id": "CAND_0000004",
+    "current_title": "Marketing Manager",
+    "years_of_experience": 3.8,
+    "matched_skills_count": 0,
+    "response_rate": 0.26,
+    "final_score": 0.31956249999999997
+  },
+  {
+    "candidate_id": "CAND_0000035",
+    "current_title": "Full Stack Developer",
+    "years_of_experience": 4.3,
+    "matched_skills_count": 0,
+    "response_rate": 0.34,
+    "final_score": 0.29133125000000004
+  },
+  {
+    "candidate_id": "CAND_0000027",
+    "current_title": "DevOps Engineer",
+    "years_of_experience": 3.9,
+    "matched_skills_count": 0,
+    "response_rate": 0.58,
+    "final_score": 0.259125
+  },
+  {
+    "candidate_id": "CAND_0000008",
+    "current_title": "Operations Manager",
+    "years_of_experience": 3.6,
+    "matched_skills_count": 0,
+    "response_rate": 0.42,
+    "final_score": 0.22416666666666668
+  },
+  {
+    "candidate_id": "CAND_0000047",
+    "current_title": "Project Manager",
+    "years_of_experience": 2.4,
+    "matched_skills_count": 0,
+    "response_rate": 0.39,
+    "final_score": 0.20079999999999998
+  },
+  {
+    "candidate_id": "CAND_0000040",
+    "current_title": "Customer Support",
+    "years_of_experience": 1.6,
+    "matched_skills_count": 0,
+    "response_rate": 0.46,
+    "final_score": 0.19116666666666665
+  },
+  {
+    "candidate_id": "CAND_0000028",
+    "current_title": "Operations Manager",
+    "years_of_experience": 1.1,
+    "matched_skills_count": 0,
+    "response_rate": 0.14,
+    "final_score": 0.19075833333333336
+  },
+  {
+    "candidate_id": "CAND_0000003",
+    "current_title": "Customer Support",
+    "years_of_experience": 1.1,
+    "matched_skills_count": 0,
+    "response_rate": 0.46,
+    "final_score": 0.149225
+  }
+]
