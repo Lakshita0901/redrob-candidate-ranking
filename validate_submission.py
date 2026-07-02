@@ -15,26 +15,53 @@ DATA_ROW_START = 2
 EXPECTED_DATA_ROWS = 100
 
 
-def validate_submission(csv_path):
+def validate_submission(file_path):
     errors = []
-    path = Path(csv_path)
+    path = Path(file_path)
+    suffix = path.suffix.lower()
 
-    if path.suffix.lower() != ".csv":
-        errors.append("Filename must use a .csv extension.")
+    if suffix not in (".csv", ".xlsx"):
+        errors.append("Filename must use a .csv or .xlsx extension.")
     elif not path.stem:
-        errors.append("Filename must be your registered participant ID (e.g. team_xxx.csv).")
+        errors.append(f"Filename must be your registered participant ID (e.g. team_xxx{suffix}).")
 
-    try:
-        with open(path, "r", encoding="utf-8", newline="") as f:
-            reader = csv.reader(f)
+    data_rows = []
+    if suffix == ".csv":
+        try:
+            with open(path, "r", encoding="utf-8", newline="") as f:
+                reader = csv.reader(f)
 
-            try:
-                header = next(reader)
-            except StopIteration:
-                errors.append("Row 1 must be the header row; file is empty.")
-                return errors
+                try:
+                    header = next(reader)
+                except StopIteration:
+                    errors.append("Row 1 must be the header row; file is empty.")
+                    return errors
 
-            # Row 1: column names and their order come from this line only
+                # Row 1: column names and their order come from this line only
+                if header != REQUIRED_HEADER:
+                    errors.append(
+                        "Row 1 (header) must be exactly:\n"
+                        f"  {','.join(REQUIRED_HEADER)}\n"
+                        f"Found:\n"
+                        f"  {','.join(header)}"
+                    )
+
+                for row in reader:
+                    if any(cell.strip() for cell in row):
+                        data_rows.append(row)
+
+        except UnicodeDecodeError:
+            errors.append("File must be UTF-8 encoded.")
+            return errors
+        except OSError as e:
+            errors.append(f"Cannot read file: {e}")
+            return errors
+    else:  # .xlsx
+        try:
+            import pandas as pd
+            # To ensure values are read as strings (to match CSV checks)
+            df = pd.read_excel(path, dtype=str)
+            header = list(df.columns)
             if header != REQUIRED_HEADER:
                 errors.append(
                     "Row 1 (header) must be exactly:\n"
@@ -42,18 +69,12 @@ def validate_submission(csv_path):
                     f"Found:\n"
                     f"  {','.join(header)}"
                 )
-
-            data_rows = []
-            for row in reader:
-                if any(cell.strip() for cell in row):
-                    data_rows.append(row)
-
-    except UnicodeDecodeError:
-        errors.append("File must be UTF-8 encoded.")
-        return errors
-    except OSError as e:
-        errors.append(f"Cannot read file: {e}")
-        return errors
+            for idx, row in df.iterrows():
+                row_cells = [str(x).strip() if not pd.isna(x) else "" for x in row]
+                data_rows.append(row_cells)
+        except Exception as e:
+            errors.append(f"Cannot read Excel file: {e}")
+            return errors
 
     n = len(data_rows)
     if n != EXPECTED_DATA_ROWS:
@@ -148,7 +169,7 @@ def validate_submission(csv_path):
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python validate_submission.py <participant_id>.csv")
+        print("Usage: python validate_submission.py <participant_id>.<csv|xlsx>")
         sys.exit(1)
 
     errors = validate_submission(sys.argv[1])

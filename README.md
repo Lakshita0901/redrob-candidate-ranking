@@ -78,14 +78,14 @@ Inspects the current title string:
    ```
    This streams candidate profiles from `candidates.jsonl` and writes the top 100 to `ranked_candidates.json`.
 
-3. **Format & Validate CSV Output**:
+3. **Format & Validate XLSX Output**:
    ```bash
    python output.py
    ```
-   This reads `ranked_candidates.json` and produces `submission.csv` (properly formatting the monotonically decreasing scores and reasoning string) and automatically validates it using `validate_submission.py`.
+   This reads `ranked_candidates.json` and produces `submission.xlsx` (properly formatting the monotonically decreasing scores and reasoning string) and automatically validates it using `validate_submission.py`.
 
 ## Output File
-The final formatted file is saved as **`submission.csv`** and contains the columns:
+The final formatted file is saved as **`submission.xlsx`** and contains the columns:
 - `candidate_id`: Standard CAND_XXXXXXX ID.
 - `rank`: Rank from 1 to 100.
 - `score`: Artificially mapped score from `0.9920` (rank 1) decrementing by `0.0080` per rank.

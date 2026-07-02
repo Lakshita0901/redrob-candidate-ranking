@@ -56,12 +56,48 @@ def generate_csv(json_path, csv_path):
             
     print(f"Generated submission file: {csv_path}")
 
-def run_validation(csv_path):
+def generate_xlsx(json_path, xlsx_path):
     """
-    Runs validate_submission function on the generated CSV file.
+    Reads the ranked JSON and generates the final submission XLSX.
     """
-    print(f"Validating {csv_path} using validate_submission.py...")
-    errors = validate_submission(csv_path)
+    if not os.path.exists(json_path):
+        print(f"Error: {json_path} does not exist. Run rank.py first.")
+        sys.exit(1)
+        
+    with open(json_path, "r", encoding="utf-8") as f:
+        candidates = json.load(f)
+        
+    import pandas as pd
+    data = []
+    for idx, cand in enumerate(candidates):
+        rank = idx + 1
+        score = 0.9920 - (rank - 1) * 0.0080
+        
+        # Format reasoning: "{current_title} with {X} yrs; {N} AI core skills; response rate {R}."
+        title = cand.get("current_title", "").strip()
+        yoe = cand.get("years_of_experience", 0.0)
+        skills = cand.get("matched_skills_count", 0)
+        rr = cand.get("response_rate", 0.0)
+        
+        reasoning = f"{title} with {yoe:.1f} yrs; {skills} AI core skills; response rate {rr:.2f}."
+        
+        data.append({
+            "candidate_id": cand["candidate_id"],
+            "rank": rank,
+            "score": round(score, 4),
+            "reasoning": reasoning
+        })
+        
+    df = pd.DataFrame(data)
+    df.to_excel(xlsx_path, index=False)
+    print(f"Generated submission file: {xlsx_path}")
+
+def run_validation(file_path):
+    """
+    Runs validate_submission function on the generated file.
+    """
+    print(f"Validating {file_path} using validate_submission.py...")
+    errors = validate_submission(file_path)
     
     if not errors:
         print("=" * 60)
@@ -77,12 +113,16 @@ def run_validation(csv_path):
         return False
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate and validate hackathon submission CSV.")
+    parser = argparse.ArgumentParser(description="Generate and validate hackathon submission XLSX.")
     parser.add_argument("--input", default="ranked_candidates.json", help="Path to ranked candidates JSON")
-    parser.add_argument("--out", default="submission.csv", help="Path to final submission CSV")
+    parser.add_argument("--out", default="submission.xlsx", help="Path to final submission XLSX")
     args = parser.parse_args()
     
-    generate_csv(args.input, args.out)
+    if args.out.endswith(".csv"):
+        generate_csv(args.input, args.out)
+    else:
+        generate_xlsx(args.input, args.out)
+        
     success = run_validation(args.out)
     if not success:
         sys.exit(1)
